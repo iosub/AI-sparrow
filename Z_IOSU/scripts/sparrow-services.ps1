@@ -107,6 +107,12 @@ function Start-SparrowService {
     $scriptBlock = {
         param($envPath, $workDir, $apiFile, $port, $logFile)
         
+        # Configurar variables de entorno para evitar conflictos de numpy/torch
+        $env:OMP_NUM_THREADS="1"
+        $env:MKL_NUM_THREADS="1"
+        $env:NUMEXPR_NUM_THREADS="1"
+        $env:OPENBLAS_NUM_THREADS="1"
+        
         Set-Location $workDir
         & $envPath
         python $apiFile --port $port 2>&1 | Tee-Object -FilePath $logFile

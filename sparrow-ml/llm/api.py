@@ -338,7 +338,7 @@ if __name__ == "__main__":
     parser.add_argument("-p", "--port", type=int, default=8002, help="Port to run the FastAPI app on")
     args = parser.parse_args()
 
-    uvicorn.run("api:app", host="0.0.0.0", port=args.port, reload=True)
+    uvicorn.run("api:app", host="0.0.0.0", port=args.port, reload=False)
 
 # run the app with: python api.py --port 8000
 # go to http://127.0.0.1:8000/api/v1/sparrow-llm/docs to see the Swagger UI
