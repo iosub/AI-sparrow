@@ -35,8 +35,8 @@ Available pipelines: `sparrow-parse`, `sparrow-instructor`, `stocks`
 
 ### Backend Inference Pattern
 All backends follow the factory pattern in `sparrow_parse/vllm/inference_factory.py`:
+- **Ollama**: Local models (`ollama`) - **PREFERRED for this setup**
 - **MLX**: Apple Silicon optimized (`mlx`, requires `sparrow-parse[mlx]`)
-- **Ollama**: Local models (`ollama`)
 - **HuggingFace**: Cloud GPU (`huggingface`)
 - **Local GPU**: CUDA/AMD (`local_gpu`)
 
@@ -76,9 +76,10 @@ Always activate correct environment before working on component.
 ## Dependencies and Installation
 
 ### Platform-Specific Setup
-- **Apple Silicon**: Use MLX backend with `pip install sparrow-parse[mlx]`
-- **Linux/Windows**: Use Ollama backend with `pip install sparrow-parse`
-- **All platforms**: Require `poppler` for PDF processing (`brew install poppler`)
+- **This Setup**: Use **Ollama backend** with `uv pip install sparrow-parse`
+- **Development Tools**: Use `uv` for virtual environments and `PowerShell` for shell commands
+- **Project Assets**: Use `Z_IOSU/` directory for project-specific files and configurations
+- **All platforms**: Require `poppler` for PDF processing
 
 ### Version Requirements
 - Python 3.12.10 (enforced by `sparrow.sh`)
@@ -118,3 +119,15 @@ When adding new features:
 5. Update CLI argument handling in `engine.py`
 
 Always check existing similar implementations in the same component before creating new patterns.
+
+## Project-Specific Setup Notes
+
+### Development Environment
+- **Package Manager**: Use `uv` for all Python environment and dependency management
+- **Shell**: Use PowerShell commands (avoid bash-style commands)
+- **Local Models**: Configure Ollama as the primary backend for local inference
+
+### Project Structure
+- **Assets Directory**: Use `Z_IOSU/` in project root for custom configurations, models, and project-specific files
+- **Virtual Environments**: Created with `uv venv` and dependencies installed with `uv pip install`
+- **Backend Configuration**: Default to Ollama settings in config files
