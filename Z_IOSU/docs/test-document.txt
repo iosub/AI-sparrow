@@ -1,0 +1,13 @@
+Simple Test Document
+
+Invoice Information:
+Company: Test Corporation
+Invoice Number: INV-2025-001
+Date: September 26, 2025
+Amount: $1,250.50
+
+Line Items:
+- Consulting Services: $1,000.00
+- Tax: $250.50
+
+Total: $1,250.50

@@ -48,12 +48,49 @@
 - [x] Script `activate-env.ps1` creado y funcionando
 - [x] Configuración Ollama preparada
 
-### 🔄 Pendiente
-- [ ] Configurar Ollama y descargar modelos locales
-- [ ] Instalar poppler para procesamiento PDF
-- [ ] Probar pipeline básico con documento de ejemplo
-- [ ] Configurar archivos de configuración personalizados
-- [ ] Probar cada entorno individualmente
+### ✅ Completado Recientemente  
+- [x] Ollama verificado y funcionando (v0.12.3)
+- [x] Modelos vision disponibles: qwen2.5vl:7b, qwen3:4b-instruct, mistral-small
+- [x] Configuración Ollama aplicada a config.properties
+- [x] Entorno sparrow-parse activado correctamente
+- [x] API de Sparrow iniciada y funcionando en puerto 8002
+- [x] Script sparrow.ps1 creado para Windows (equivalente a sparrow.sh)
+- [x] Script start-api.ps1 para iniciar APIs fácilmente
+- [x] Documento de prueba creado en Z_IOSU/docs/
+
+### 🔄 Próximos Pasos
+- [ ] Instalar poppler para procesamiento PDF completo
+- [ ] Probar API con documento real (imagen/PDF)
+- [ ] Configurar modelos vision específicos para Sparrow
+- [ ] Validar extracción de datos estructurados
+- [ ] Probar diferentes pipelines (parse vs instructor)
+
+### ✨ Scripts Disponibles
+- `Z_IOSU/scripts/activate-env.ps1` - Activar entornos virtuales
+- `Z_IOSU/scripts/start-api.ps1` - Iniciar APIs individuales
+- `Z_IOSU/scripts/sparrow.ps1` - CLI de Sparrow para Windows
+- `Z_IOSU/scripts/sparrow-services.ps1` - **Administrador completo multi-entorno** ⭐
+
+### 🌐 APIs Multi-Entorno Configuradas
+- **Sparrow Parse**: `http://localhost:8002/docs` (Vision LLM)
+- **Instructor**: `http://localhost:8003/docs` (Text LLM)  
+- **Agents**: `http://localhost:8001/docs` (Workflows)
+- **OCR**: `http://localhost:8004/docs` (Text Recognition)
+- **UI**: `http://localhost:8005` (Web Interface)
+
+### 🎯 **SISTEMA MULTI-ENTORNO COMPLETO** ✅
+
+**Iniciar todo el stack:**
+```powershell
+.\Z_IOSU\scripts\sparrow-services.ps1 start-all -Background
+```
+
+**Ver estado:**
+```powershell
+.\Z_IOSU\scripts\sparrow-services.ps1 status
+```
+
+**Ver guía completa:** `Z_IOSU/docs/servicios-multi-entorno.md`
 
 ## 🎯 Próximos Pasos
 
